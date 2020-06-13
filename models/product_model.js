@@ -1,0 +1,43 @@
+const mongoose=require('mongoose')
+const productModel=new mongoose.Schema(
+    {
+        name:
+            {
+                type:String
+            },
+        price:
+            {
+                type:String
+            },
+        img:
+            {
+                type:String
+            },
+        specs:
+            {
+                type:Object
+            },
+        seller:
+            {
+                type:String
+            },
+        reviews:
+        [
+            {
+                title:
+                    {
+                        type:String
+                    },
+                review:
+                    {
+                        type:String
+                    },
+                rating:
+                    {
+                        type:String
+                    }
+            }
+        ]
+    }
+)
+module.exports=mongoose.model('product_model',productModel)
